@@ -1,0 +1,57 @@
+{
+  "name": "cchooks",
+  "version": "0.0.1",
+  "description": "A library for managing Claude Code hooks with TypeScript",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cchooks": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "format": "prettier --write \"src/**/*.ts\" \"*.ts\" \"*.json\" \"*.md\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"*.ts\" \"*.json\" \"*.md\"",
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "pnpm run build",
+    "cli": "node dist/cli.js",
+    "dev:cli": "pnpm build && node dist/cli.js"
+  },
+  "keywords": [
+    "claude",
+    "hooks",
+    "code",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "commander": "^14.0.0",
+    "diff": "^8.0.2",
+    "get-stdin": "^9.0.0",
+    "inquirer": "^12.7.0",
+    "micromatch": "^4.0.8"
+  },
+  "devDependencies": {
+    "@types/diff": "^8.0.0",
+    "@types/inquirer": "^9.0.8",
+    "@types/micromatch": "^4.0.9",
+    "@types/node": "^24.0.15",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "oxlint": "^1.7.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
