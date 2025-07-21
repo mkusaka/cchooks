@@ -332,7 +332,9 @@ describe("generateSettings", () => {
       );
 
       const expectedDir = `${os.homedir()}/.claude`;
-      expect(mockFs.mkdirSync).toHaveBeenCalledWith(expectedDir, { recursive: true });
+      expect(mockFs.mkdirSync).toHaveBeenCalledWith(expectedDir, {
+        recursive: true,
+      });
     });
   });
 });

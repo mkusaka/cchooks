@@ -44,7 +44,9 @@ program
     }
     // Validate scope
     if (!["user", "project", "local"].includes(opts.scope)) {
-      console.error(`Invalid scope: ${opts.scope}. Must be one of: user, project, local`);
+      console.error(
+        `Invalid scope: ${opts.scope}. Must be one of: user, project, local`,
+      );
       process.exit(1);
     }
 
@@ -59,13 +61,13 @@ program
     } else {
       console.log("=== Dry run diff ===");
       console.log(result.diff);
-      
+
       const scopeMessages = {
         user: "user settings (~/.claude/settings.json)",
         project: "project settings (.claude/settings.json)",
         local: "local settings (.claude/settings.local.json)",
       };
-      
+
       const { apply } = await inquirer.prompt([
         {
           type: "confirm",
@@ -75,7 +77,12 @@ program
         },
       ]);
       if (apply) {
-        const filePath = generateSettings(opts.scriptPath, opts.runnerCmd, false, opts.scope);
+        const filePath = generateSettings(
+          opts.scriptPath,
+          opts.runnerCmd,
+          false,
+          opts.scope,
+        );
         console.log(`✅ Wrote changes to ${filePath}`);
       } else {
         console.log("Cancelled.");
