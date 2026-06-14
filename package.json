@@ -37,7 +37,7 @@
   "packageManager": "pnpm@11.5.2",
   "dependencies": {
     "commander": "^14.0.0",
-    "diff": "^8.0.2",
+    "diff": "^8.0.3",
     "get-stdin": "^9.0.0",
     "inquirer": "^12.7.0",
     "micromatch": "^4.0.8"
@@ -52,6 +52,6 @@
     "oxlint": "^1.7.0",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.6"
   }
 }
